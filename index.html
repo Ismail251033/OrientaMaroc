@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrientaMaroc — Trouve ta voie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="showPage('home')">
+        <span class="logo-icon">🎓</span>
+        <span class="logo-text">OrientaMaroc</span>
+      </a>
+      <div class="nav-links">
+        <a href="#" onclick="showPage('home')"       class="nav-link active" id="nl-home">Accueil</a>
+        <a href="#" onclick="showPage('quiz')"        class="nav-link"        id="nl-quiz">Orientation</a>
+        <a href="#" onclick="showPage('explore')"     class="nav-link"        id="nl-explore">Explorer</a>
+        <a href="#" onclick="showPage('simulation')"  class="nav-link"        id="nl-simulation">Simulation</a>
+      </div>
+      <button class="nav-cta" onclick="showPage('quiz')">Commencer</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" onclick="showPage('home');toggleMenu()">Accueil</a>
+      <a href="#" onclick="showPage('quiz');toggleMenu()">Orientation</a>
+      <a href="#" onclick="showPage('explore');toggleMenu()">Explorer</a>
+      <a href="#" onclick="showPage('simulation');toggleMenu()">Simulation</a>
+    </div>
+  </nav>
+
+  <!-- ══ PAGES WRAPPER ══ -->
+  <main id="app">
+
+    <!-- ─── PAGE : HOME ─── -->
+    <section id="page-home" class="page active">
+      <div class="hero">
+        <div class="hero-bg">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-badge">🌟 Plateforme d'orientation #1 au Maroc</div>
+          <h1 class="hero-title">
+            Trouve ta voie,<br>
+            <span class="gradient-text">construis ton avenir</span>
+          </h1>
+          <p class="hero-sub">
+            Orientation intelligente pour les élèves marocains — filières, métiers, écoles —
+            tout ce qu'il te faut pour faire le bon choix.
+          </p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="showPage('quiz')">
+              Commencer l'orientation <span>→</span>
+            </button>
+            <button class="btn-ghost" onclick="showPage('explore')">
+              Explorer les métiers
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-box"><strong>500+</strong><span>Métiers</span></div>
+            <div class="stat-box"><strong>200+</strong><span>Écoles</span></div>
+            <div class="stat-box"><strong>12</strong><span>Filières</span></div>
+            <div class="stat-box"><strong>16</strong><span>Régions</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="features-section">
+        <h2 class="section-title">Tout ce dont tu as besoin</h2>
+        <p class="section-sub">Une plateforme complète pour les élèves marocains</p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Orientation intelligente</h3>
+            <p>Algorithme basé sur tes notes, préférences et objectifs pour te guider vers la meilleure filière.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>500+ métiers répertoriés</h3>
+            <p>Explore les métiers au Maroc et à l'international avec salaires, durée et compétences.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Écoles proches de toi</h3>
+            <p>Base de données complète des écoles marocaines avec géolocalisation intelligente.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Simulation temps réel</h3>
+            <p>Modifie tes notes et vois tes résultats changer instantanément.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>Chatbot sans API</h3>
+            <p>Assistant intelligent basé sur une logique marocaine — sans dépendance externe.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🇲🇦</div>
+            <h3>Adapté au Maroc</h3>
+            <p>Pensé pour le baccalauréat marocain, les concours et le système universitaire local.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA bottom -->
+      <div class="cta-section">
+        <div class="cta-box">
+          <h2>Prêt à découvrir ta voie ?</h2>
+          <p>Réponds à quelques questions et obtiens ton orientation personnalisée en moins de 5 minutes.</p>
+          <button class="btn-white" onclick="showPage('quiz')">
+            Commencer maintenant — c'est gratuit →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PAGE : QUIZ ─── -->
+    <section id="page-quiz" class="page">
+      <div class="quiz-wrapper">
+        <div class="quiz-header">
+          <h1>Questionnaire d'orientation</h1>
+          <p id="quiz-step-label">Étape 1 sur 3</p>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar-wrap">
+          <div class="progress-steps">
+            <div class="p-step active" id="ps-1"><span>1</span></div>
+            <div class="p-line" id="pl-1"></div>
+            <div class="p-step" id="ps-2"><span>2</span></div>
+            <div class="p-line" id="pl-2"></div>
+            <div class="p-step" id="ps-3"><span>3</span></div>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill" style="width:33%"></div>
+          </div>
+        </div>
+
+        <!-- Step 1 : Notes -->
+        <div class="quiz-step glass-card" id="step-1">
+          <h2>📐 Tes notes moyennes</h2>
+          <p>Saisis tes moyennes sur 20 pour chaque matière</p>
+          <div class="grades-grid" id="gradesGrid">
+            <!-- Injecté par JS -->
+          </div>
+        </div>
+
+        <!-- Step 2 : Préférences -->
+        <div class="quiz-step glass-card hidden" id="step-2">
+          <h2>❤️ Tes domaines préférés</h2>
+          <p>Sélectionne les domaines qui t'intéressent</p>
+          <div class="pref-grid" id="prefGrid">
+            <!-- Injecté par JS -->
+          </div>
+        </div>
+
+        <!-- Step 3 : Objectifs -->
+        <div class="quiz-step glass-card hidden" id="step-3">
+          <h2>🎯 Tes objectifs de vie</h2>
+          <p>Qu'est-ce qui compte le plus pour toi ?</p>
+          <div class="pref-grid" id="objGrid">
+            <!-- Injecté par JS -->
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="quiz-nav">
+          <button class="btn-ghost" id="btnBack" onclick="quizBack()" disabled>← Retour</button>
+          <button class="btn-primary" id="btnNext" onclick="quizNext()">Suivant →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PAGE : RÉSULTATS ─── -->
+    <section id="page-results" class="page">
+      <div class="results-wrapper">
+        <div class="results-header">
+          <button class="btn-ghost-sm" onclick="showPage('quiz')">← Refaire</button>
+          <h1>Tes résultats d'orientation</h1>
+          <p id="results-avg">Moyenne générale : <strong>—</strong></p>
+        </div>
+
+        <!-- Rings filieres -->
+        <div class="glass-card rings-card">
+          <h2>Compatibilité par filière</h2>
+          <div class="rings-row" id="ringsRow"></div>
+          <div class="top-filiere-banner" id="topFiliereBanner"></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="result-tabs">
+          <button class="tab-btn active" onclick="switchTab('filieres')">Filières</button>
+          <button class="tab-btn"        onclick="switchTab('metiers')">Métiers</button>
+          <button class="tab-btn"        onclick="switchTab('schools')">Écoles</button>
+        </div>
+
+        <div id="tab-filieres" class="tab-content active"></div>
+        <div id="tab-metiers"  class="tab-content hidden"></div>
+        <div id="tab-schools"  class="tab-content hidden"></div>
+      </div>
+    </section>
+
+    <!-- ─── PAGE : EXPLORE ─── -->
+    <section id="page-explore" class="page">
+      <div class="explore-wrapper">
+        <div class="explore-header">
+          <h1>Explorer</h1>
+          <p>Découvrez toutes les filières, métiers et écoles disponibles</p>
+        </div>
+        <div class="explore-tabs">
+          <button class="tab-btn active" onclick="switchExploreTab('filieres')">Filières</button>
+          <button class="tab-btn"        onclick="switchExploreTab('metiers')">Métiers</button>
+          <button class="tab-btn"        onclick="switchExploreTab('schools')">Écoles</button>
+        </div>
+        <div class="explore-toolbar" id="exploreToolbar" style="display:none">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="exploreSearch" placeholder="Rechercher..." oninput="filterExplore()" />
+          </div>
+          <select id="exploreFilter" onchange="filterExplore()">
+            <option value="">Tous</option>
+          </select>
+        </div>
+        <div id="explore-content"></div>
+      </div>
+    </section>
+
+    <!-- ─── PAGE : SIMULATION ─── -->
+    <section id="page-simulation" class="page">
+      <div class="sim-wrapper">
+        <div class="sim-header">
+          <h1>Simulation en temps réel</h1>
+          <p>Modifie tes notes et vois immédiatement tes filières recommandées</p>
+        </div>
+        <div class="sim-grid">
+          <div class="glass-card sim-sliders">
+            <div class="sim-card-header">
+              <h2>Tes notes</h2>
+              <button class="btn-ghost-sm" onclick="resetSim()">↺ Réinitialiser</button>
+            </div>
+            <div id="simSliders"></div>
+          </div>
+          <div class="sim-results">
+            <div class="glass-card">
+              <h2>Filières recommandées</h2>
+              <p class="sim-avg" id="simAvg">Moyenne : —</p>
+              <div id="simFilieres"></div>
+            </div>
+            <div class="glass-card">
+              <h2>Top métiers compatibles</h2>
+              <div id="simMetiers"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ CHATBOT ══ -->
+  <button class="chat-fab" id="chatFab" onclick="toggleChat()">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-head">
+      <div class="chat-avatar">🤖</div>
+      <div>
+        <div class="chat-title">Assistant OrientaMaroc</div>
+        <div class="chat-sub">Orientation intelligente • Gratuit</div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-suggestions" id="chatSuggestions"></div>
+    <div class="chat-input-wrap">
+      <input type="text" id="chatInput" placeholder="Pose ta question..." onkeydown="if(event.key==='Enter') sendChat()" />
+      <button class="chat-send" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+<script src="js/main.js"></script>
+</body>
+</html>
